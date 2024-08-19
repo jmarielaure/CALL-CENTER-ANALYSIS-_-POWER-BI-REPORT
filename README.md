@@ -30,3 +30,24 @@ The Calls table will consolidate call data from the past four years and be enric
 The Site table will contain the information previously included in the US State table therefore avoiding the load of the US State table in the model.
 
 No additional information will be added to the Employee table
+
+##### Major Data Transformation Leading to Wanted Outcome
+
+
+#### Call Charges Table Transformation
+
+- **Remove Null Rows**: Filter out any rows that contain null values to ensure data integrity.
+- **Promote Headers**: Convert the first row of data into column headers for clarity.
+- **Assign Datatypes**: Set appropriate data types for each column to facilitate accurate data processing.
+- **Unpivot Columns**: Transform wide-formatted data into a long format by unpivoting columns, making the data more suitable for analysis.
+- **Correct Datatypes**: Recheck and correct any incorrect datatypes to ensure consistency.
+- **Assign Local Currency**: Set the column with fees to use the US dollar currency format.
+- **Extract Year**: Create a new column by extracting the year from the original column names, enhancing the temporal analysis capabilities.
+
+#### Data YYYY Table Transformation
+
+- **Split Columns**: Use a comma delimiter to split columns, separating data into distinct fields.
+- **Separate Date and Time**: Extract and separate date and time into two different columns to improve query performance in Power BI.
+- **Consolidation_Append Data Files**: Append the 4 transformed files into a new consolidated table named "Call Data".
+- **Enrich Call Data Table**: Additional enhancements and enrichment steps display below were applied to the "Call Data" table to ensure comprehensive analysis.
+
