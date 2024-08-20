@@ -53,4 +53,39 @@ No additional information will be added to the Employee table
 - **Consolidation_Append Data Files**: Append the 4 transformed files into a new consolidated table named "Call Data".
 - **Enrich Call Data Table**: Additional enhancements and enrichment steps display below were applied to the "Call Data" table to ensure comprehensive analysis.
 
+| Type of Join  | Table                          | Column(s) Used as Join                            | Column(s) Retrieved |
+|---------------|--------------------------------|---------------------------------------------------|---------------------|
+| Right Join    | Call Data – Call Type          | CallTypeKey (called CallTypeID in the Call Type table) | CallTypeLabel       |
+| Right Join    | Call Data – (Call) Charges     | Year YYYY and CallTypeLabel                       | Call Charges        |
+| Right Join    | Call Data – Employee           | EmployeeID                                        | Sites               |
 
+**Note:** the loading of the following tables was disabled : All 4 individual files Data YYYY, (Call) Charges and CallType.
+
+
+
+   ### ■ __SITE TABLE (dimension table)__
+
+
+#### Employee Table Transformation
+
+- **Select columnn**: Keep only the Site column from the Employee table.
+- **Remove duplicates**: Remove duplicates from Site column
+- **Split column**: Split column by delimiter into twe separate column to aller the merge with the US State table : Site name and the stateCD.
+
+
+  | Type of Join | Table          | Column(s) Used as Join | Column(s) Retrieved     |
+  |--------------|----------------|------------------------|-------------------------|
+  | Right Join   | Site – US State| StateCD                | City Name and Region     |
+
+ **Note:** The loading of the US States table was disabled.
+
+For all data loaded:
+     The first row was promoted as the column name.
+     Datatypes were assigned.
+     Some columns were also renamed.
+     Date and Time were separated in all tables with timestamps.
+     Occasionally, columns were trimmed as invisible blank spaces were preventing perfect merging.
+
+
+   ## STEP 2 : DATA MODELING
+![Screenshot_2](https://github.com/username/test/assets/108919293/d8206e8b-5c62-49f9-94e4-19b9d9d5c6e6)
