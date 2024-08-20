@@ -88,6 +88,77 @@ For all data loaded:
 
 
    ## STEP 2 : DATA MODELING
-   ![alt text](https://github.com/jmarielaure/DATA-PIPELINE_RECIPE-BOX-RESTAURANT-PROJECT/blob/main/DATA%20PIPELINE_%20RECIPE%20BOX_%20XSD%20Schema%20simplified%20representation.png](https://github.com/username/test/assets/108919293/d8206e8b-5c62-49f9-94e4-19b9d9d5c6e6](https://github.com/jmarielaure/CALL-CENTER-ANALYSIS-_-POWER-BI-REPORT/blob/main/Report%20screenshots/Report_Model_view.png?raw=true )
 
-![Report Model View](https://github.com/jmarielaure/CALL-CENTER-ANALYSIS-_-POWER-BI-REPORT/blob/main/Report%20screenshots/Report_Model_view.png)
+![Report Model View](https://github.com/jmarielaure/CALL-CENTER-ANALYSIS-_-POWER-BI-REPORT/blob/main/Report%20screenshots/Report_Model_view.png "Model View")
+
+To finish the model a calculated table “Calendar” was created directly in Power BI using DAX
+
+
+
+```dax
+Calendar =
+ADDCOLUMNS (
+CALENDAR (DATE(2018, 1, 1), DATE(2021, 12, 31)),
+"Year", YEAR([Date]),
+"Month", FORMAT([Date], "MMMM"),
+"Month Number", MONTH([Date]),
+"Quarter", "Q" & FORMAT(QUARTER([Date]), "0"),
+"Day of Week", FORMAT([Date], "dddd"),
+"Day of Year", FORMAT([Date], "DDD")
+)
+```
+
+   ## STEP 3 : KPI DEFINITION AND DAX CALCULATION 
+
+To see if the moment of the day had any significant impact on the number of calls received, we had to be able to group the calls into time brackets  and /or categories (morning , afternoon, night) according to the time.
+We created calculated columns Time_Brackets and Time_Period assigning a time bracket and a period of the day to each call according to the time of call. 
+A hierarchy was also created : Time Period  Time_Brackets
+
+-	__Time_brackets DAX calculation__
+```dax
+Time_Bracket = 
+VAR start_hour =
+    FORMAT ( Data[Call  Time], "hh" )
+VAR end_hour =
+    IF ( LEN ( start_hour + 1 ) = 1, "0" & start_hour + 1, start_hour + 1 )
+RETURN
+    start_hour & ":00 - " & end_hour & ":00"
+
+```
+  
+-	__Time_Period DAX calculation__
+  ```dax
+Time_Period = 
+VAR start_hour =
+    VALUE(FORMAT(Data[Call  Time], "hh"))
+RETURN
+    SWITCH (
+        TRUE(),
+        start_hour < 12, "Morning",
+        start_hour >= 12 && start_hour < 18, "Afternoon",
+        "Night"
+    )
+```
+
+   ## STEP 4 : REPORT CREATION WITH POWER BI
+
+To see if the moment of the day had any significant impact on the number of calls received, we had to be able to group the calls into time brackets  and /or categories (morning , afternoon, night) according to the time.
+We created calculated 
+
+   ### ■ __OVERVIEW PAGE__
+
+Focus on primary information related to the calls. This page answer basic questions such as : which site handles the most calls, what are the customers calling for, when does the customers mostly call , etc.
+
+![Report Overview tab](https://github.com/jmarielaure/CALL-CENTER-ANALYSIS-_-POWER-BI-REPORT/blob/main/Report%20screenshots/Report_Overview%20tab.png "Report Overview Tab")
+
+- __Filter pane features__
+  
+Allow you to filter all visuals on the page. The period filter is a drop-down list with a time hierarchy ( year, quarter, month). The button “ Clear All Slicers” was added for time saving purposes.
+![Overview filter pane](https://github.com/jmarielaure/CALL-CENTER-ANALYSIS-_-POWER-BI-REPORT/blob/main/Report%20screenshots/Overview%20page%20_%20Filter%20Pane.png "Overview filter pane")
+
+- __Cards with KPI and page navigation button at the top row__
+  
+The top row was used to display the main KPIs related to the calls : total calls, rate of call abandonment, revenue generated, average wait time in second and average call duration in min. 
+![Overview tab top row](https://github.com/jmarielaure/CALL-CENTER-ANALYSIS-_-POWER-BI-REPORT/blob/main/Report%20screenshots/Overview%20page%20_%20KPI%20Cards.png "Overview teb top row")
+
+-__Line chart__
