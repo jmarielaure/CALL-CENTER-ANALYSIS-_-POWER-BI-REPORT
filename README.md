@@ -154,11 +154,85 @@ Focus on primary information related to the calls. This page answer basic questi
 - __Filter pane features__
   
 Allow you to filter all visuals on the page. The period filter is a drop-down list with a time hierarchy ( year, quarter, month). The button “ Clear All Slicers” was added for time saving purposes.
+
 ![Overview filter pane](https://github.com/jmarielaure/CALL-CENTER-ANALYSIS-_-POWER-BI-REPORT/blob/main/Report%20screenshots/Overview%20page%20_%20Filter%20Pane.png "Overview filter pane")
 
 - __Cards with KPI and page navigation button at the top row__
   
 The top row was used to display the main KPIs related to the calls : total calls, rate of call abandonment, revenue generated, average wait time in second and average call duration in min. 
+
 ![Overview tab top row](https://github.com/jmarielaure/CALL-CENTER-ANALYSIS-_-POWER-BI-REPORT/blob/main/Report%20screenshots/Overview%20page%20_%20KPI%20Cards.png "Overview teb top row")
 
--__Line chart__
+- __Double axis line chart__
+Line chart to put in perspective the waiting time and the  call abandoned rate based on the time of the day
+
+![Line chart](https://github.com/jmarielaure/CALL-CENTER-ANALYSIS-_-POWER-BI-REPORT/blob/main/Report%20screenshots/Overview%20page%20_%20Double%20axis%20Line%20chart%20_%20call%20abandoned%20vs%20wait%20time.png "Double axis Line chart trend comparison between average wait time and call abandonment rate")
+
+- __Pie chart and stacked column__
+A pie chart shows the total call repartition among the different sites.
+We can drill down the stacked column visuals to have the call type repartition on a specific period.
+
+![Pie chart and stacked column](https://github.com/jmarielaure/CALL-CENTER-ANALYSIS-_-POWER-BI-REPORT/blob/main/Report%20screenshots/Overview%20page%20_%20Bottom%20row.png "Pie chart and stacked column with drill down option")
+
+
+
+   ### ■ __PERFORMANCE PAGE – FINANCIAL VIEW__
+ Focus on information related to revenue. It can be accessed thanks to the button “ Financial Performance“ which activates the dedicated bookmark. 
+
+![PERFORMANCE PAGE – FINANCIAL VIEW](https://github.com/jmarielaure/CALL-CENTER-ANALYSIS-_-POWER-BI-REPORT/blob/main/Report%20screenshots/Report_%20Performance%20Insight%20tab_%20Financial%20Performance%20view.png "PERFORMANCE PAGE – FINANCIAL VIEW")
+
+
+
+
+   ### ■ __PERFORMANCE PAGE – EMPLOYEE PERFORMANCE VIEW__
+   
+Focus on information related to employee’s performance. It can be accessed thanks to the button “ Employee Performance“ which activates the dedicated bookmark. 
+We can answer questions such as which employees handle the most calls on each site, which employee generate the most revenue, etc.
+
+![EMPLOYEE PERFORMANCE VIEW](https://github.com/jmarielaure/CALL-CENTER-ANALYSIS-_-POWER-BI-REPORT/blob/main/Report%20screenshots/Report_%20Performance%20Insight%20tab_%20Employee%20Performance%20view.png "EMPLOYEE PERFORMANCE VIEW")
+
+
+## KEY FINDINGS AND RECOMMANDATION (extract)
+
+
+- __Key metrics__
+
+
+
+| Metric                  | Value                                    |
+|-------------------------|------------------------------------------|
+| **Total Calls**         | 132K over the 4-year evaluated period    |
+| **Call Abandonment**    | 7,923 calls abandoned (6.01%)            |
+| **Average Wait Time**   | 29.7 seconds                             |
+| **Average Call Duration** | 13 minutes                             |
+
+
+
+- __Financial Performance__
+
+
+| Metric                       | Value                                          |
+|------------------------------|------------------------------------------------|
+| **Average Charge per Call**  | $15.94                                         |
+| **Total Call Charges**       | $2M, indicating robust revenue from call operations |
+| **Average Calls per Day**    | 90 calls/day                                   |
+
+
+  
+- __Main recommandation__
+
+__Improve the usability of their product:__ Each year, more than 50% of the calls are for Tech Support (approx. 16k calls/year). Servicespot should focus on improving the ease of use of their products and services to reduce this type of call. It might be wise to review and improve the product, as well as to give customers clear indication and enhance user training to reduce dependency on technical support. 
+
+
+_For further insight , here is the link to the
+[Insights and recommandations PDF report]([../blob/master/LICENSE](https://github.com/jmarielaure/CALL-CENTER-ANALYSIS-_-POWER-BI-REPORT/blob/main/Insight%20and%20Recommandations%20Report%20_%20Call%20center%20analysis.pdf))_
+
+## TOOLS USED
+PowerBI desktop, Power Query,  DAX
+
+## CONTRIBUTION
+Team project : Nada NAFIE and Sajeevan SOTHIRASA
+
+## CONCLUSION
+
+
