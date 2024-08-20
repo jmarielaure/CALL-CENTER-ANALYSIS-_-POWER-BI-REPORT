@@ -235,4 +235,15 @@ Team project : Nada NAFIE and Sajeevan SOTHIRASA
 
 ## CONCLUSION
 
+- __This project demonstrates the following skills__
+__Identify Key Metrics__: We established crucial performance indicators such as call abandonment rates, average wait times, and call charges.
+__Visualize Data Effectively__: Through Power BI, we created a comprehensive and interactive report that highlights trends, peak call times, and site performance.
+__Optimize Data Processing__: We implemented data transformation strategies to streamline data handling, reducing redundancy and improving model efficiency.
+__Modeling__: Creating a model in PowerBI with the use of Power Query
+__Data cleaning and trasformation__
+
+- __Areas for impovement and collaboration__
+Future improvements could include incorporating more granular data, such as call resolutions and customer feedback and employee objectoves, to provide deeper insights.
+Automated Data Integration: Developing automated ETL (Extract, Transform, Load) processes would further reduce manual data preparation efforts and improve data accuracy.
+
 
