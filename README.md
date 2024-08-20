@@ -1,6 +1,6 @@
 # CALL-CENTER-ANALYSIS_POWER-BI-REPORT
 
-## Table of content 
+
 
 ## PROBLEM STATEMENT
  ServiceSpot, an IT company, contacted us to help them analyze their call center data. 
