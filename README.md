@@ -88,4 +88,4 @@ For all data loaded:
 
 
    ## STEP 2 : DATA MODELING
-![Screenshot_2](https://github.com/username/test/assets/108919293/d8206e8b-5c62-49f9-94e4-19b9d9d5c6e6)
+   ![alt text]([https://github.com/jmarielaure/DATA-PIPELINE_RECIPE-BOX-RESTAURANT-PROJECT/blob/main/DATA%20PIPELINE_%20RECIPE%20BOX_%20XSD%20Schema%20simplified%20representation.png](https://github.com/username/test/assets/108919293/d8206e8b-5c62-49f9-94e4-19b9d9d5c6e6](https://github.com/jmarielaure/CALL-CENTER-ANALYSIS-_-POWER-BI-REPORT/blob/main/Report%20screenshots/Report_Model%20view.png) "Model representation")
